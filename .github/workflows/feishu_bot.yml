@@ -35,5 +35,5 @@ jobs:
     steps:
       - uses: junka/feishu-bot-webhook-action@main
         with:
-          webhook: ${{ secrets.FEISHU_BOT_WEBHOOK }}
-          signkey: ${{ secrets.FEISHU_BOT_SIGNKEY }}
+          webhook: ${{ secrets.FEISHU_BOT_WEBHOOK-feishu }}
+          signkey: ${{ secrets.FEISHU_BOT_SIGNKEY-feishu }}
