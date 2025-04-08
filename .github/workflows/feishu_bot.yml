@@ -32,15 +32,9 @@ jobs:
   send-event:
     name: Webhook
     runs-on: ubuntu-latest
+    environment: feishu
     steps:
       - uses: junka/feishu-bot-webhook-action@main
         with:
           webhook: ${{ secrets.FEISHU_BOT_WEBHOOK }}
           signkey: ${{ secrets.FEISHU_BOT_SIGNKEY }}
-      - name: Debug Secrets
-        run: |
-          echo "FEISHU_BOT_WEBHOOK is set: $FEISHU_BOT_WEBHOOK"
-          echo "FEISHU_BOT_SIGNKEY is set: $FEISHU_BOT_SIGNKEY"
-        env:
-          FEISHU_BOT_WEBHOOK: ${{ secrets.FEISHU_BOT_WEBHOOK }}
-          FEISHU_BOT_SIGNKEY: ${{ secrets.FEISHU_BOT_SIGNKEY }}
